@@ -7,7 +7,13 @@ public class G4Ghosts extends AbstractGhost {
 
 	@Override
 	public int[] getActions(Game game, long timeDue) {
-		return null;
+		int[] directions=new int[Game.NUM_GHOSTS];
+		
+		
+		
+		
+		
+		return directions;
 	}
 
 	@Override
