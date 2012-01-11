@@ -1,0 +1,8 @@
+game
+game.controllers
+game.core
+game.entries.ghosts
+game.entries.pacman
+game.player.ghost
+game.player.pacman
+gui
