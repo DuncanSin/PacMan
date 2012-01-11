@@ -14,7 +14,7 @@ public class G4Ghosts extends AbstractGhost {
 	@Override
 	public String getGhostGroupName() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Gruppe 4: Ghosts";
 	}
 
 }
