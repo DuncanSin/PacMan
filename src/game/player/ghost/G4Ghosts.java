@@ -7,7 +7,6 @@ public class G4Ghosts extends AbstractGhost {
 
 	@Override
 	public int[] getActions(Game game, long timeDue) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
