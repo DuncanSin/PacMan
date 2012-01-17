@@ -31,9 +31,18 @@ public class G4Ghosts extends AbstractGhost {
 					dist = 10000;
 
 					for (int j = 0; j < posDir.length; j++) {
-						temp = game.getPathDistance(
-								game.getNeighbour(curPos[i], posDir[j]),
-								game.getCurPacManLoc());
+
+						if (GhostNear(game, i, curPos)) {
+
+							temp = game.getManhattenDistance(
+									game.getNeighbour(curPos[i], posDir[j]),
+									game.getCurPacManLoc());
+
+						} else {
+							temp = game.getPathDistance(
+									game.getNeighbour(curPos[i], posDir[j]),
+									game.getCurPacManLoc());
+						}
 
 						if (temp <= dist) {
 							dist = temp;
@@ -45,6 +54,23 @@ public class G4Ghosts extends AbstractGhost {
 		}
 
 		return directions;
+	}
+
+	private boolean GhostNear(Game game, int whichGhost, int[] others) {
+		
+		int ghosts = game.NUM_GHOSTS;
+		
+		for (int i = 0; i < ghosts; i++) {
+
+			if (i == whichGhost) {
+				continue;
+			} else if (game.getPathDistance(game.getCurGhostLoc(whichGhost),
+					game.getCurGhostLoc(i)) < 6) {
+				return true;
+			}
+
+		}
+		return false;
 	}
 
 	private int getFarthestPoint(Game game) {
