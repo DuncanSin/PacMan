@@ -32,7 +32,7 @@ public class G4Ghosts extends AbstractGhost {
 
 					for (int j = 0; j < posDir.length; j++) {
 
-						if (GhostNear(game, i, curPos)) {
+						if (GhostNear(game, i)) {
 
 							temp = game.getManhattenDistance(
 									game.getNeighbour(curPos[i], posDir[j]),
@@ -56,7 +56,7 @@ public class G4Ghosts extends AbstractGhost {
 		return directions;
 	}
 
-	private boolean GhostNear(Game game, int whichGhost, int[] others) {
+	private boolean GhostNear(Game game, int whichGhost) {
 		
 		int ghosts = game.NUM_GHOSTS;
 		
@@ -92,7 +92,7 @@ public class G4Ghosts extends AbstractGhost {
 
 	@Override
 	public String getGhostGroupName() {
-		return "Gruppe 4: Ghosts";
+		return "Gruppe4_Ghosts";
 	}
 
 }
