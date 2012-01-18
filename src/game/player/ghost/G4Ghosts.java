@@ -4,20 +4,23 @@ import game.core.Game;
 import gui.AbstractGhost;
 
 public class G4Ghosts extends AbstractGhost {
-
+	
 	@Override
 	public int[] getActions(Game game, long timeDue) {
 		int[] directions = new int[Game.NUM_GHOSTS];
 		int[] curPos = new int[Game.NUM_GHOSTS];
 		int[] curDir = new int[Game.NUM_GHOSTS];
 		int[] posDir = new int[4];
-
+		
 		int farthest = getFarthestPoint(game);
 
 		double dist, temp;
 
 		for (int i = 0; i < Game.NUM_GHOSTS; i++) {
 			if (game.ghostRequiresAction(i)) {
+				
+				System.out.println(i);
+				
 				curPos[i] = game.getCurGhostLoc(i);
 				curDir[i] = game.getCurGhostDir(i);
 
